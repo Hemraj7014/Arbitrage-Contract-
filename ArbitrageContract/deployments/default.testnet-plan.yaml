@@ -1,0 +1,25 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: ArbitrageContract
+            expected-sender: ST352DHQD4FZ5CQANJM58YKMF7RWW3MR13N71KT27
+            cost: 61430
+            path: "contracts\\ArbitrageContract.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: OptionsContract
+            expected-sender: ST352DHQD4FZ5CQANJM58YKMF7RWW3MR13N71KT27
+            cost: 2330
+            path: "contracts\\OptionsContract.clar"
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.2"
